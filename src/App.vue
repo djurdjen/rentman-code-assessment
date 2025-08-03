@@ -2,20 +2,23 @@
   <div class="app">
     <FolderTree 
       v-if="folderTreeNodes.length" 
-      :data="folderTreeNodes"
       v-model="selectedItemModel"
+      :data="folderTreeNodes"
     >
       <template #post-content="{ clear }">
         <div class="app__item-ids">
           Selected item IDs: <template v-for="(id, key) in selectedItemModel">
             {{ id + (key < (selectedItemModel.length - 1) ? ', ' : '') }}
           </template>
-          <template v-if="!selectedItemModel.length">-</template>
+          <template v-if="!selectedItemModel.length">
+            -
+          </template>
         </div>
         <div class="app__clear-data">
           <ThemeButton 
             class="app__clear-data__button"
-            @click="clear">
+            @click="clear"
+          >
             Clear selection
           </ThemeButton>
         </div>
@@ -35,16 +38,16 @@ import ThemeButton from './components/ThemeButton/ThemeButton.vue';
 
 defineOptions({
   name: 'App'
-})
+});
 
-const folderTreeNodes = ref<IFolderTreeNode[]>([])
-const selectedItemModel = ref<number[]>([])
+const folderTreeNodes = ref<IFolderTreeNode[]>([]);
+const selectedItemModel = ref<number[]>([]);
 
 apiFetch.get<{ folders: ColumnDataRaw, items: ColumnDataRaw }>('/data/response.json').then((rawData) => {
-  const folders = mapColumnData<IFolder>(rawData.folders)
-  const items = mapColumnData<IItem>(rawData.items)
-  folderTreeNodes.value = mapFoldersAndItemsToTree(folders, items)
-})
+  const folders = mapColumnData<IFolder>(rawData.folders);
+  const items = mapColumnData<IItem>(rawData.items);
+  folderTreeNodes.value = mapFoldersAndItemsToTree(folders, items);
+});
 </script>
 
 <style scoped lang="scss">

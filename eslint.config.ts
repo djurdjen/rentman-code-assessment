@@ -1,6 +1,6 @@
-import js from '@eslint/js'
-import eslintPluginVue from 'eslint-plugin-vue'
-import ts from 'typescript-eslint'
+import js from '@eslint/js';
+import eslintPluginVue from 'eslint-plugin-vue';
+import ts from 'typescript-eslint';
 
 export default ts.config(
   js.configs.recommended,
@@ -24,7 +24,6 @@ export default ts.config(
       'eol-last': ['error', 'always'],
       'semi': ["warn", 'always'],
       "no-useless-escape": 0,
-      "unused-imports/no-unused-imports": 1,
       "@typescript-eslint/no-unsafe-function-type": 0,
       "@typescript-eslint/no-explicit-any": "off",
       '@typescript-eslint/ban-ts-comment': 0,
@@ -42,7 +41,7 @@ export default ts.config(
       "vue/multi-word-component-names": 0,
       "vue/no-v-text-v-html-on-component": 0,
       "vue/one-component-per-file": 0,
-      "vue/no-v-html": 1,
+      "vue/no-v-html": 1
     }
   }
-)
+);

@@ -1,18 +1,17 @@
-# rentman-code-assessment
+# Rentman code assessment
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a code assessment created on the instructions of the company Rentman.
+The application is based on the the following design: [https://www.figma.com/design/pPvMOOEOgmioZ7ilJVQrZq/Front-end-Assessment](https://www.figma.com/design/pPvMOOEOgmioZ7ilJVQrZq/Front-end-Assessment)
 
-## Recommended IDE Setup
+## Requirements
+You will need the following tools to get started:
+- Node 22.12.0
+- VSCode plugins (if being used):
+   - Vue Language Features (Volar)
+   - Typescript Vue Plugin (Volar)
+   - ESLint
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+If you do not use VSCode just use the plugins that are recommended by your IDE for the Vue javascript framework.
 
 ## Project Setup
 

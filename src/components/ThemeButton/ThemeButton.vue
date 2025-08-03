@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-defineOptions({ name: 'ThemeButton' })
+defineOptions({ name: 'ThemeButton' });
 </script>
 
 <style scoped lang="scss">

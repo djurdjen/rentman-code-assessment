@@ -3,7 +3,10 @@
     <div class="folder-tree__container">
       <FolderTreeNodes :data="data" />
     </div>
-    <slot name="post-content" :clear="() => { model = [] }" />
+    <slot
+      name="post-content"
+      :clear="() => { model = [] }"
+    />
   </div>
 </template>
 
@@ -15,32 +18,32 @@ import { folderTreeInjectionKey, type FolderTreeSelectionModel } from './types';
 
 defineOptions({
   name: 'FolderTree'
-})
+});
 
 const props = defineProps({
-  data: { type: Object as PropType<IFolderTreeNode[]> },
+  data: { type: Array as PropType<IFolderTreeNode[]>, default: () => [] },
   modelValue: { type: Array as PropType<number[]>, default: () => [] }
-})
+});
 
 const emit = defineEmits<{
   (e: 'update:modelValue', payload: number[]): void
-}>()
+}>();
 
-const model = ref<FolderTreeSelectionModel>(mapFolderArrayToObj(props.modelValue))
+const model = ref<FolderTreeSelectionModel>(mapFolderArrayToObj(props.modelValue));
 
-provide(folderTreeInjectionKey, model)
+provide(folderTreeInjectionKey, model);
 
 watch(model, (v) => {
   emit('update:modelValue', Object.entries(v).reduce((a, [key, val]) =>
     val ? [...a, parseInt(key)] : a
-    , <number[]>[]))
-}, { deep: true })
+    , <number[]>[]));
+}, { deep: true });
 
 
 function mapFolderArrayToObj(val: number[]) {
   return val.reduce((a, b) => {
-    return { ...a, [b]: true }
-  }, <FolderTreeSelectionModel>{})
+    return { ...a, [b]: true };
+  }, <FolderTreeSelectionModel>{});
 }
 </script>
 
