@@ -53,7 +53,8 @@
 <script setup lang="ts">
 import type { IFolderTreeNode, IItem } from '@/types';
 import { inject, ref, type PropType, type Ref } from 'vue';
-import { folderTreeInjectionKey, type FolderTreeSelectionModel } from './types';
+import { type FolderTreeSelectionModel } from './types';
+import { folderTreeInjectionKey } from './constants';
 
 defineOptions({
   name: 'FolderTreeNodes'

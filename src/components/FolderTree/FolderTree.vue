@@ -14,7 +14,8 @@
 import type { IFolderTreeNode } from '@/types';
 import { provide, ref, watch, type PropType } from 'vue';
 import FolderTreeNodes from './FolderTreeNodes.vue';
-import { folderTreeInjectionKey, type FolderTreeSelectionModel } from './types';
+import { type FolderTreeSelectionModel } from './types';
+import { folderTreeInjectionKey } from './constants';
 
 defineOptions({
   name: 'FolderTree'
