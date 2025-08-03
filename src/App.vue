@@ -31,7 +31,7 @@
 import { ref } from 'vue';
 import FolderTree from './components/FolderTree/FolderTree.vue';
 import { apiFetch } from './services/apiFetch';
-import type { ColumnDataRaw, IFolder, IFolderTreeNode, IItem } from './types';
+import type { IColumnDataRaw, IFolder, IFolderTreeNode, IItem } from './types';
 import { mapColumnData } from './mappers/mapColumnData';
 import { mapFoldersAndItemsToTree } from './mappers/mapFoldersAndItemsToTree';
 import ThemeButton from './components/ThemeButton/ThemeButton.vue';
@@ -43,7 +43,7 @@ defineOptions({
 const folderTreeNodes = ref<IFolderTreeNode[]>([]);
 const selectedItemModel = ref<number[]>([]);
 
-apiFetch.get<{ folders: ColumnDataRaw, items: ColumnDataRaw }>('/data/response.json').then((rawData) => {
+apiFetch.get<{ folders: IColumnDataRaw, items: IColumnDataRaw }>('/data/response.json').then((rawData) => {
   const folders = mapColumnData<IFolder>(rawData.folders);
   const items = mapColumnData<IItem>(rawData.items);
   folderTreeNodes.value = mapFoldersAndItemsToTree(folders, items);

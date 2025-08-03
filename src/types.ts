@@ -1,4 +1,4 @@
-export interface ColumnDataRaw { 
+export interface IColumnDataRaw { 
   columns: string[], 
   data: any[][] 
 }
